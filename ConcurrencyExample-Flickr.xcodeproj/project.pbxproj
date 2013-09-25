@@ -19,6 +19,10 @@
 		CABE8B7D17F3244E00BB43E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABE8B6517F3244E00BB43E6 /* UIKit.framework */; };
 		CABE8B8517F3244E00BB43E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CABE8B8317F3244E00BB43E6 /* InfoPlist.strings */; };
 		CABE8B8717F3244E00BB43E6 /* ConcurrencyExample_FlickrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CABE8B8617F3244E00BB43E6 /* ConcurrencyExample_FlickrTests.m */; };
+		CABE8B9217F3246300BB43E6 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABE8B9117F3246300BB43E6 /* PhotosViewController.m */; };
+		CABE8B9417F3283C00BB43E6 /* flickr-response.json in Resources */ = {isa = PBXBuildFile; fileRef = CABE8B9317F3283C00BB43E6 /* flickr-response.json */; };
+		CABE8B9617F32C0F00BB43E6 /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CABE8B9517F32C0F00BB43E6 /* photo.jpg */; };
+		CABE8B9917F3425000BB43E6 /* FlickrNetworkCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CABE8B9817F3425000BB43E6 /* FlickrNetworkCommunicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		CABE8B8217F3244E00BB43E6 /* ConcurrencyExample-FlickrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ConcurrencyExample-FlickrTests-Info.plist"; sourceTree = "<group>"; };
 		CABE8B8417F3244E00BB43E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CABE8B8617F3244E00BB43E6 /* ConcurrencyExample_FlickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConcurrencyExample_FlickrTests.m; sourceTree = "<group>"; };
+		CABE8B9017F3246300BB43E6 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		CABE8B9117F3246300BB43E6 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		CABE8B9317F3283C00BB43E6 /* flickr-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "flickr-response.json"; sourceTree = "<group>"; };
+		CABE8B9517F32C0F00BB43E6 /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo.jpg; path = "../../../../Library/Mail/V2/IMAP-akilasekaran2006@imap.gmail.com/[Gmail].mbox/All Mail.mbox/BF9B9A23-E5D9-4644-9FE9-9599FD3B21C1/Data/7/1/Attachments/17839/2.2/photo.jpg"; sourceTree = "<group>"; };
+		CABE8B9717F3425000BB43E6 /* FlickrNetworkCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrNetworkCommunicator.h; sourceTree = "<group>"; };
+		CABE8B9817F3425000BB43E6 /* FlickrNetworkCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrNetworkCommunicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +117,13 @@
 		CABE8B6717F3244E00BB43E6 /* ConcurrencyExample-Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				CABE8B9517F32C0F00BB43E6 /* photo.jpg */,
 				CABE8B7017F3244E00BB43E6 /* AppDelegate.h */,
 				CABE8B7117F3244E00BB43E6 /* AppDelegate.m */,
+				CABE8B9017F3246300BB43E6 /* PhotosViewController.h */,
+				CABE8B9117F3246300BB43E6 /* PhotosViewController.m */,
+				CABE8B9717F3425000BB43E6 /* FlickrNetworkCommunicator.h */,
+				CABE8B9817F3425000BB43E6 /* FlickrNetworkCommunicator.m */,
 				CABE8B7317F3244E00BB43E6 /* Images.xcassets */,
 				CABE8B6817F3244E00BB43E6 /* Supporting Files */,
 			);
@@ -118,6 +133,7 @@
 		CABE8B6817F3244E00BB43E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CABE8B9317F3283C00BB43E6 /* flickr-response.json */,
 				CABE8B6917F3244E00BB43E6 /* ConcurrencyExample-Flickr-Info.plist */,
 				CABE8B6A17F3244E00BB43E6 /* InfoPlist.strings */,
 				CABE8B6D17F3244E00BB43E6 /* main.m */,
@@ -221,6 +237,8 @@
 			files = (
 				CABE8B6C17F3244E00BB43E6 /* InfoPlist.strings in Resources */,
 				CABE8B7417F3244E00BB43E6 /* Images.xcassets in Resources */,
+				CABE8B9417F3283C00BB43E6 /* flickr-response.json in Resources */,
+				CABE8B9617F32C0F00BB43E6 /* photo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABE8B9917F3425000BB43E6 /* FlickrNetworkCommunicator.m in Sources */,
 				CABE8B7217F3244E00BB43E6 /* AppDelegate.m in Sources */,
+				CABE8B9217F3246300BB43E6 /* PhotosViewController.m in Sources */,
 				CABE8B6E17F3244E00BB43E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
