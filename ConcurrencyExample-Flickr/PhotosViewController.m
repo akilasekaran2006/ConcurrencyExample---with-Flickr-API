@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *displayedImages;
 
 @property (nonatomic,strong) NSDictionary *jsonDictionary;
-@property (nonatomic,strong) NSMutableArray *photoID;
+@property (nonatomic,strong) NSMutableArray *photoIDsArray;
 @property (nonatomic, strong) FlickrNetworkCommunicator *networkCommunicator;
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -53,7 +53,7 @@
     [self getJSONDictionary];
     
     
-    self.photoID = [[NSMutableArray alloc] init];
+    self.photoIDsArray = [[NSMutableArray alloc] init];
     
     [self getPhotoID];
     
@@ -74,7 +74,7 @@
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc]init];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"Cell"];
 
     }
     UIImage *photo = [self.displayedImages objectAtIndex:indexPath.row];
@@ -93,7 +93,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.imageView.clipsToBounds = YES;
-    cell.imageView.layer.cornerRadius = 10;
+    cell.imageView.layer.cornerRadius = 50;
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,7 +119,7 @@
     
     for (NSDictionary *eachPhoto in [[self.jsonDictionary objectForKey:@"photos"] objectForKey:@"photo"])
     {
-        [self.photoID addObject:[eachPhoto objectForKey:@"id"]];
+        [self.photoIDsArray addObject:[eachPhoto objectForKey:@"id"]];
     }
     
     
@@ -130,19 +130,21 @@
 - (void)addButtonPressed:(id)sender
 {
     static NSInteger nextPhotoToFetch = 0;
-    NSString *photoId = [self.photoID objectAtIndex:nextPhotoToFetch];
+    NSString *nextPhotoIDFromPhotoIDsArray = [self.photoIDsArray objectAtIndex:nextPhotoToFetch];
     nextPhotoToFetch++;
     
-    [self.networkCommunicator requestImageForPhotoId:photoId
-                                      withCompletion:^(BOOL success, UIImage *image) {
+    [self.networkCommunicator requestImageForPhotoId:nextPhotoIDFromPhotoIDsArray
+                                      withCompletion:^(BOOL success, UIImage *image)
+    {
                                           if(success)
                                           {
                                               [self.displayedImages insertObject:image
                                                                          atIndex:0];
                                           }
                                           
-                                          [self.tableView reloadData];
-                                      }];
+        
+        [self.tableView reloadData];
+    }];
     
 }
 
